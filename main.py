@@ -20,7 +20,7 @@ Builder.load_string('''
 ''')
 
 __author__ = 'NoonKey'
-__version__ = '0.1.2'
+__version__ = '0.1.2.0'
 
 
 class Base(FloatLayout):
