@@ -1,0 +1,64 @@
+<Base>:
+    hex_input: hex_input
+    kivy_input: kivy_input
+    slider: slider
+    back_color: 0, 0, 0, 1
+    canvas:
+        Color:
+            rgba: root.back_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+#        size_hint: .9, .6
+        size_hint: None, None
+        size: 460, 150
+        pos: 10, 25
+        GridLayout:
+            size_hint_x: .9
+            pos_hint: {'center': (.5, .5)}
+            rows: 2
+            Label:
+                size_hint_x: .2
+                text: 'Hex Values'
+            TextInput:
+                id: hex_input
+                size_hint_x: .4
+                padding_x: '10dp'
+                padding_y: (self.height - self.line_height) * .5
+            Button:
+                id: hex_btn
+                size_hint_x: .4
+                text: 'Calculate Kivy Values'
+                on_press: root.calc_hex(hex_input.text)
+            Label:
+                size_hint_x: .2
+                text: 'Kivy Values'
+            TextInput:
+                id: kivy_input
+                size_hint_x: .4
+                padding_x: '10dp'
+                padding_y: (self.height - self.line_height) * .5
+            Button:
+                id: kivy_btn
+                size_hint_x: .4
+                text: 'Calculate Hex Values'
+                on_press: root.calc_kivy(kivy_input.text)
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: .1
+            Label:
+                size_hint_y: .1
+                text: 'Alpha'
+            Slider:
+                id: slider
+                size_hint_y: .8
+                orientation: 'vertical'
+                range: 0, 1
+                step: .05
+                value: .5
+                padding: sp(18)
+                on_value: root.on_slider(hex_input.text, kivy_input.text)
+            Label:
+                size_hint_y: .1
+                text: str(slider.value)
