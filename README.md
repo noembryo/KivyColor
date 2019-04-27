@@ -4,5 +4,6 @@
 ![example](screen.blue.png)
 
 #### Usage
-To use it, input a value to either of the text input boxes and press the appropriate "Calculate" button.  
+To use it, input a value to either of the text input boxes and press the appropriate 
+"Calculate" button or "Enter".  
 The Alpha slider doesn't change the values. It's there to help with the preview. 
